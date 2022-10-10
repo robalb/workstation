@@ -28,8 +28,8 @@ type -p gh >/dev/null || echo -e "${COLOR} gh not found, installing it ${NC}" \
 
 echo -e "${COLOR} ====== [core] GITHUB AUTH =======${NC}"
 # TODO: dont login if already logged in
-# gh auth login
-# gh auth setup-git
+gh auth login
+gh auth setup-git
 
 
 echo -e "${COLOR} ====== [core] TOOLS INSTALLATION =======${NC}"
