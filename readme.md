@@ -13,7 +13,7 @@ features:
 
 - idempotent script. Running it twice won't cause any damage
 - guided github account login
-- sync dotfiles with public repository
+- sync dotfiles with public repository https://github.com/robalb/dotfiles
 - bare minimum tools: tmux, vim, kitty
 - programming tools: lvim, python, nodejs (via nvm), docker desktop
 - hacking tools: pwntools, z3
