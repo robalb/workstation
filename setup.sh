@@ -47,10 +47,10 @@ echo -e "${COLOR} ====== [core] DOTFILES SETUP =======${NC}"
 # https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
 # Initialize the bare repo and pull the dotfiles from the origin.
 # All these operations are idempotent
-git init --bare $HOME/.cfg
-git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote add origin https://github.com/robalb/dotfiles
-git --git-dir=$HOME/.cfg/ --work-tree=$HOME fetch --all
-git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --hard origin/master
+[ -d "$HOME/.cfg" ] && echo -e "${COLOR} ====== [core] skipping dotfiles setup =======${NC}" || ( echo -e "${COLOR} ====== [core] DOTFILES SETUP =======${NC}" \
+  && git init --bare $HOME/.cfg \
+  && git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote add origin https://github.com/robalb/dotfiles \
+  && git --git-dir=$HOME/.cfg/ --work-tree=$HOME pull --ff-only origin master )
 
 
 # EXTRA CONFIGURATION
