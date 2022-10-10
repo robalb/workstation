@@ -4,4 +4,4 @@ services:
   machine1:
     image: ubuntu
     volumes:
-      - ./machine1:/main
+      - ./:/main

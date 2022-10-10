@@ -49,7 +49,8 @@ echo -e "${COLOR} ====== [core] DOTFILES SETUP =======${NC}"
 # All these operations are idempotent
 git init --bare $HOME/.cfg
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote add origin https://github.com/robalb/dotfiles
-git --git-dir=$HOME/.cfg/ --work-tree=$HOME pull --ff-only origin master
+git --git-dir=$HOME/.cfg/ --work-tree=$HOME fetch --all
+git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --hard origin/master
 
 
 # EXTRA CONFIGURATION
