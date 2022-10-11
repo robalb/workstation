@@ -13,7 +13,18 @@ features:
 
 - idempotent script. Running it twice won't cause any damage
 - guided github account login
-- sync dotfiles with public repository
+- sync dotfiles with public repository https://github.com/robalb/dotfiles
 - bare minimum tools: tmux, vim, kitty
 - programming tools: lvim, python, nodejs (via nvm), docker desktop
 - hacking tools: pwntools, z3
+
+# additional manual steps
+
+These steps require manual intervention from the settings gui
+
+- ### set kitty as the default terminal:
+  settings>keyboard shortcuts>custom shortcut> (set ctrl+alt+t to execute `kitty --start-as fullscreen`. This will automatically disable the default
+  'launch terminal' shortuct)
+- ### swap esc and capslock key: 
+  install gnome tweaks `sudo apt install gnome-tweaks-tool && gnome-tweaks` then from the gnome tweaks app (NOT the settings app) Keyboard & Mouse > Additional Layout Options > Caps Lock Behavior
+- swap fn and ctrl on some thinkpad keyboard layouts: TODO
