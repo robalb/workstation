@@ -26,5 +26,5 @@ These steps require manual intervention from the settings gui
   settings>keyboard shortcuts>custom shortcut> (set ctrl+alt+t to execute `kitty --start-as fullscreen`. This will automatically disable the default
   'launch terminal' shortuct)
 - ### swap esc and capslock key: 
-  install gnome tweaks `sudo apt install gnome-tweaks-tool && gnome-tweaks`Keyboard & Mouse > Additional Layout Options > Caps Lock Behavior
+  install gnome tweaks `sudo apt install gnome-tweaks-tool && gnome-tweaks` then from the gnome tweaks app (NOT the settings app) Keyboard & Mouse > Additional Layout Options > Caps Lock Behavior
 - swap fn and ctrl on some thinkpad keyboard layouts: TODO
