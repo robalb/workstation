@@ -54,6 +54,15 @@ echo -e "${COLOR} ====== [core] DOTFILES SETUP =======${NC}"
   && git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote add origin https://github.com/robalb/dotfiles \
   && git --git-dir=$HOME/.cfg/ --work-tree=$HOME pull --ff-only origin master )
 
+# Fonts installation (dotfiles include ./fonts, but they need to be installed)
+# kitty list-fonts will show all available fonts in kitty
+echo -e "${COLOR} ====== [core] refreshing font cache =======${NC}"
+sudo fc-cache -fv
+
+#install kitty if not already installed
+type -p kitty >/dev/null || (echo -e "${COLOR} kitty not found, installing it ${NC}" \
+  && (curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin) \
+  && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ )
 
 # EXTRA CONFIGURATION
 # Careful, the following configuration steps are not idempotent
