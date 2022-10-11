@@ -17,3 +17,11 @@ features:
 - bare minimum tools: tmux, vim, kitty
 - programming tools: lvim, python, nodejs (via nvm), docker desktop
 - hacking tools: pwntools, z3
+
+# additional manual steps
+
+These steps require manual intervention from the settings gui
+
+- set kitty as the default terminal
+- swap esc and capslock key
+- swap fn and ctrl on some thinkpad keyboard layouts
