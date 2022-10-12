@@ -11,11 +11,14 @@ If you don't have curl:
 
 features:
 
-- idempotent script. Running it twice won't cause any damage
+- Running the script twice won't cause any damage. Configurations and programs are installed only if they are not detected in the system
 - guided github account login
-- sync dotfiles with public repository https://github.com/robalb/dotfiles
-- bare minimum tools: tmux, vim, kitty
-- programming tools: lvim, python, nodejs (via nvm), docker desktop
+- git repository for dotfiles management, synced with https://github.com/robalb/dotfiles. (It uses the technique described [here](https://www.atlassian.com/git/tutorials/dotfiles) )
+- bare minimum tools: tmux, nvim, kitty (with sourcecodepro nerd font)
+
+extra features (kinda out of scope for this script, can be disabled via the extra flag):
+
+- programming tools: lunarvim, python, nodejs (via nvm), docker desktop
 - hacking tools: pwntools, z3
 
 # additional manual steps
