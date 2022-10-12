@@ -69,7 +69,7 @@ type -p kitty >/dev/null || (echo -e "${COLOR} kitty not found, installing it ${
 # Careful, the following configuration steps are not idempotent, and very opinionated
 if [ $extra ] ;then
   echo -e "${COLOR} ====== [extra] LANGUAGES INSTALLATION =======${NC}"
-  apt-get install -y python3 python3-pip python3-dev libssl-dev libffi-dev build-essential wget make
+  sudo apt install -y python3 python3-pip python3-dev libssl-dev libffi-dev build-essential wget make
   python3 -m pip install --upgrade pip
   python3 -m pip install --upgrade pwntools
   python3 -m pip install --upgrade z3-solver
