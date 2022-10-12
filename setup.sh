@@ -44,7 +44,6 @@ type -p nvim >/dev/null || (echo -e "${COLOR} neovim not found, installing it ${
   sudo apt-get update &&\
   sudo apt -qq install neovim -y )
 
-echo -e "${COLOR} ====== [core] DOTFILES SETUP =======${NC}"
 # https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
 # Initialize the bare repo and pull the dotfiles from the origin.
 # All these operations are idempotent
@@ -52,7 +51,9 @@ echo -e "${COLOR} ====== [core] DOTFILES SETUP =======${NC}"
   || ( echo -e "${COLOR} ====== [core] DOTFILES SETUP =======${NC}" \
   && git init --bare $HOME/.cfg \
   && git --git-dir=$HOME/.cfg/ --work-tree=$HOME remote add origin https://github.com/robalb/dotfiles \
-  && git --git-dir=$HOME/.cfg/ --work-tree=$HOME pull --ff-only origin master )
+  && git --git-dir=$HOME/.cfg/ --work-tree=$HOME config --local status.showUntrackedFiles no \
+  && git --git-dir=$HOME/.cfg/ --work-tree=$HOME fetch --all \
+  && git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --hard origin/master )
 
 # Fonts installation (dotfiles include ./fonts, but they need to be installed)
 # kitty list-fonts will show all available fonts in kitty
@@ -65,10 +66,10 @@ type -p kitty >/dev/null || (echo -e "${COLOR} kitty not found, installing it ${
   && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ )
 
 # EXTRA CONFIGURATION
-# Careful, the following configuration steps are not idempotent
+# Careful, the following configuration steps are not idempotent, and very opinionated
 if [ $extra ] ;then
   echo -e "${COLOR} ====== [extra] LANGUAGES INSTALLATION =======${NC}"
-  apt-get install -y python3 python3-pip python3-dev libssl-dev libffi-dev build-essential wget
+  apt-get install -y python3 python3-pip python3-dev libssl-dev libffi-dev build-essential wget make
   python3 -m pip install --upgrade pip
   python3 -m pip install --upgrade pwntools
   python3 -m pip install --upgrade z3-solver
