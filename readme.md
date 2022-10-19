@@ -34,3 +34,5 @@ These steps require manual intervention from the settings gui
   The wallpaper png image is kept in the dotfiles repository as `~/wallpaper.png`. Use the settings gui to set it as wallpaper
 - ### swap fn and ctrl on some thinkpad keyboard layouts: 
   It's done in the bios settings. Config -> keyboard/mouse -> Fn and Ctrl Key swap. [lenovo - how to swap fn and ctrl](https://support.lenovo.com/gb/en/solutions/ht074187-how-to-swap-the-fn-function-and-ctrl-control-keyboard-keys-in-bios)
+- ### disable snap notifications
+  https://askubuntu.com/a/1424950
