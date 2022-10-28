@@ -14,7 +14,7 @@ features:
 - Running the script twice won't cause any damage. Configurations and programs are installed only if they are not detected in the system
 - guided github account login
 - git repository for dotfiles management, synced with https://github.com/robalb/dotfiles. (It uses the technique described [here](https://www.atlassian.com/git/tutorials/dotfiles) )
-- bare minimum tools: tmux, nvim, kitty (with sourcecodepro nerd font)
+- bare minimum tools: tmux, nvim, nerdfonts
 
 extra features (kinda out of scope for this script, can be disabled via the extra flag):
 
@@ -25,9 +25,6 @@ extra features (kinda out of scope for this script, can be disabled via the extr
 
 These steps require manual intervention from the settings gui
 
-- ### set kitty as the default terminal:
-  settings>keyboard shortcuts>custom shortcut> (set ctrl+alt+t to execute `kitty --start-as fullscreen`. This will automatically disable the default
-  'launch terminal' shortuct)
 - ### swap esc and capslock key: 
   install gnome tweaks `sudo apt install gnome-tweaks-tool && gnome-tweaks` then from the gnome tweaks app (NOT the settings app) Keyboard & Mouse > Additional Layout Options > Caps Lock Behavior
 - ### activate wallpaper:
