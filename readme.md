@@ -1,6 +1,6 @@
 # my workstation
 
-This shell script configures an ubuntu machine with my every day use configurations, dotfiles and programs.
+This shell script configures an ubuntu machine with my configurations, dotfiles and programs.
 
     curl -o- https://raw.githubusercontent.com/robalb/workstation/master/setup.sh | bash
 
