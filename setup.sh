@@ -43,6 +43,11 @@ type -p nvim >/dev/null || (echo -e "${COLOR} neovim not found, installing it ${
   sudo add-apt-repository ppa:neovim-ppa/stable -y &&\
   sudo apt-get update &&\
   sudo apt -qq install neovim -y )
+  
+# install packer plugin for neovim. If the plugin already exists nothing will happen.
+# You will have to run :PackerSync manually the first time
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
 # Initialize the bare repo and pull the dotfiles from the origin.
@@ -59,11 +64,6 @@ type -p nvim >/dev/null || (echo -e "${COLOR} neovim not found, installing it ${
 # kitty list-fonts will show all available fonts in kitty
 echo -e "${COLOR} ====== [core] refreshing font cache =======${NC}"
 sudo fc-cache -fv
-
-#install kitty if not already installed
-type -p kitty >/dev/null || (echo -e "${COLOR} kitty not found, installing it ${NC}" \
-  && (curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin) \
-  && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ )
 
 # EXTRA CONFIGURATION
 # Careful, the following configuration steps are not idempotent, and very opinionated
