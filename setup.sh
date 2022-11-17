@@ -2,7 +2,7 @@
 COLOR='\033[0;31m'
 NC='\033[0m' # No Color
 
-extra=true
+#extra=true
 
 # install a package from apt default repositories if not already installed
 apt_requirement(){
@@ -48,6 +48,11 @@ type -p nvim >/dev/null || (echo -e "${COLOR} neovim not found, installing it ${
 # You will have to run :PackerSync manually the first time
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ 
+ # install ripgrep, required by a neovim plugin
+ # https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies
+ type -p rg >/dev/null || (echo -e "${COLOR} ripgrep not found, installing it ${NC}" &&\
+  sudo apt install ripgrep -y )
 
 # https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
 # Initialize the bare repo and pull the dotfiles from the origin.
