@@ -21,6 +21,10 @@ extra features (kinda out of scope for this script, can be disabled via the extr
 - programming tools: lunarvim, python, nodejs (via nvm), docker desktop
 - hacking tools: pwntools, z3
 
+## TODO:
+
+https://github.com/zardus/ctf-tools
+
 # additional manual steps
 
 These steps require manual intervention from the settings gui
