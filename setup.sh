@@ -64,6 +64,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   && git --git-dir=$HOME/.cfg/ --work-tree=$HOME config --local status.showUntrackedFiles no \
   && git --git-dir=$HOME/.cfg/ --work-tree=$HOME fetch --all \
   && git --git-dir=$HOME/.cfg/ --work-tree=$HOME reset --hard origin/master )
+  
+# install tmux plugins defined in .tmux.conf
+$HOME/.tmux/plugins/tpm/bin/install_plugins
 
 # Fonts installation (dotfiles include ./fonts, but they need to be installed)
 # kitty list-fonts will show all available fonts in kitty
