@@ -37,3 +37,24 @@ These steps require manual intervention from the settings gui
   It's done in the bios settings. Config -> keyboard/mouse -> Fn and Ctrl Key swap. [lenovo - how to swap fn and ctrl](https://support.lenovo.com/gb/en/solutions/ht074187-how-to-swap-the-fn-function-and-ctrl-control-keyboard-keys-in-bios)
 - ### disable snap notifications
   https://askubuntu.com/a/1424950
+
+# useful workflows
+
+ssh keys: I generate a dedicated ssh key for every service that requires it.
+If i have multiple github accounts, i generate an ssh key for every account.
+
+Since github accounts are on the same github.com host, i create an host alias:
+
+ ~/.ssh/config:
+
+    #Digitiamo GitLab.com
+    Host gitlab.com
+      PreferredAuthentications publickey
+      IdentityFile ~/.ssh/id_digitiamo_gitlab
+    
+    #Digitiamo github.com (example usage: git clone git@digitiamo-github:your-repo.git)
+    Host digitiamo-github
+      HostName github.com
+      IdentitiesOnly yes
+      IdentityFile ~/.ssh/id_digitiamo_github
+
