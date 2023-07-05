@@ -58,3 +58,4 @@ Since github accounts are on the same github.com host, i create an host alias:
       IdentitiesOnly yes
       IdentityFile ~/.ssh/id_digitiamo_github
 
+When connecting to a host via ssh, all the public keys are sent by default during the handshake. it can be disabled, but it's not that simple https://serverfault.com/a/130351
