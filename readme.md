@@ -40,6 +40,10 @@ These steps require manual intervention from the settings gui
 
 # ssh workflows
 
+ssh key generation
+
+`ssh-keygen -t ed25519 -C "key comment"`
+
 I generate a dedicated ssh key for every service that requires it, i never reuse the same ssh key.
 This is for privacy reasons:
 When ssh tries to authenticate via public key, it sends the server all your public keys, one by one, until the server accepts one.
