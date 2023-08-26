@@ -38,24 +38,38 @@ These steps require manual intervention from the settings gui
 - ### disable snap notifications
   https://askubuntu.com/a/1424950
 
-# useful workflows
+# ssh workflows
 
-ssh keys: I generate a dedicated ssh key for every service that requires it.
+I generate a dedicated ssh key for every service that requires it, i never reuse the same ssh key.
+This is for privacy reasons:
+When ssh tries to authenticate via public key, it sends the server all your public keys, one by one, until the server accepts one.
+This is a minor information disclosure issue, since public keys can then be used to link someone's presence to private infrastructure, or github accounts.
+
 If i have multiple github accounts, i generate an ssh key for every account.
+Since github accounts are on the same github.com host, i create an host alias
 
-Since github accounts are on the same github.com host, i create an host alias:
+this is an example of config file
 
  ~/.ssh/config:
 
-    #Digitiamo GitLab.com
-    Host gitlab.com
-      PreferredAuthentications publickey
-      IdentityFile ~/.ssh/id_digitiamo_gitlab
+    #personal github.com
+    Host github.com
+      IdentitiesOnly yes
+      PubkeyAuthentication yes
+      IdentityFile ~/.ssh/id_personal_github
     
-    #Digitiamo github.com (example usage: git clone git@digitiamo-github:your-repo.git)
-    Host digitiamo-github
+    #work github.com (example usage: git clone git@work-github:your-repo.git)
+    Host work-github
       HostName github.com
       IdentitiesOnly yes
-      IdentityFile ~/.ssh/id_digitiamo_github
+      PubkeyAuthentication yes
+      IdentityFile ~/.ssh/id_work_github
 
-When connecting to a host via ssh, all the public keys are sent by default during the handshake. it can be disabled, but it's not that simple https://serverfault.com/a/130351
+    # By default, connect to a ssh server with user ubuntu,
+    # and don't send any ssh public key to avoid information disclosure to potential attackers.
+    # This block must be at the END of the config file
+    Host *
+      PubkeyAuthentication no
+      IdentitiesOnly yes
+      User ubuntu
+
